@@ -1,0 +1,12 @@
+context:
+  namespace: default
+
+deployment:
+  replicas: 2
+  nodetype: linux
+  image: nginx
+  image_name: nginx
+
+
+service:
+  targetPort: 8080

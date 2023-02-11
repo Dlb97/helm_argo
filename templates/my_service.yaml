@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my_helm_deployment
+spec:
+  type: LoadBalancer
+  selector:
+    app: my_helm_deployment
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: {{ .Values.service.targetPort }}

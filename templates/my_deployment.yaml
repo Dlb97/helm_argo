@@ -1,0 +1,20 @@
+kind: Deployment
+apiversion: apps/v1
+metadata:
+  name: my_helm_deployment
+  namespace: {{ .Values.context.namespace }}
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      app: my_helm_deployment
+  template:
+    metadata:
+      labels:
+        app: my_helm_deployment 
+    spec:
+      nodeSelector: {{ .Values.deployment.nodetype }}
+      containers:
+      - image: {{ .Values.deployment.image }}
+        name: {{ .Values.deployment.image_name }}
+ 
