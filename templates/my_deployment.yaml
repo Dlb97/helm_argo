@@ -13,7 +13,8 @@ spec:
       labels:
         app: my_helm_deployment 
     spec:
-      nodeSelector: {{ .Values.deployment.nodetype }}
+      nodeSelector:
+        kubernetes.io/os: {{ .Values.deployment.nodetype }}
       containers:
       - image: {{ .Values.deployment.image }}
         name: {{ .Values.deployment.image_name }}
