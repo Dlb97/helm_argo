@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: my_helm_deployment
   namespace: {{ .Values.context.namespace }}
-
 spec:
   type: LoadBalancer
   selector:
