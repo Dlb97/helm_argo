@@ -1,5 +1,5 @@
 kind: Deployment
-apiversion: apps/v1
+apiVersion: apps/v1
 metadata:
   name: my_helm_deployment
   namespace: {{ .Values.context.namespace }}
