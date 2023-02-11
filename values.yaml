@@ -1,5 +1,6 @@
 context:
   namespace: default
+  name: helm-argo
 
 deployment:
   replicas: 2

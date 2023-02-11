@@ -1,17 +1,17 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: my_helm_deployment
+  name: {{ .Values.context.name }}
   namespace: {{ .Values.context.namespace }}
 spec:
   replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
-      app: my_helm_deployment
+      app: {{ .Values.context.name }}
   template:
     metadata:
       labels:
-        app: my_helm_deployment 
+        app: {{ .Values.context.name }}
     spec:
       nodeSelector:
         kubernetes.io/os: {{ .Values.deployment.nodetype }}
